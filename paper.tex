@@ -35,7 +35,7 @@ athaleaseem@gmail.com}
 Kolhapur, Maharashtra, India \\
 maheshinkit@gmail.com}
 \and
-\IEEEauthorblockN{Kedar Salunkhe}
+\IEEEauthorblockN{Kedar Salunkhe }
 \IEEEauthorblockA{
 \textit{KIT's College of Engineering}\\
 \textit{(Autonomous)}\\
@@ -164,7 +164,7 @@ The data acquisition stage in our deep learning framework focuses on loading and
 
 \subsubsection{Dataset Selection}
 
-    We leverage a publicly available blended malware image dataset from Kaggle [1]. This dataset combines the Malimg and Malevis datasets, incorporating the advantages of both:
+    We leverage a publicly available blended malware image dataset from Kaggle. This dataset combines the Malimg and Malevis datasets, incorporating the advantages of both:
     
         Malimg Dataset: Contains byteplot images converted from Portable Executable (PE) files representing malware samples. However, it's known to have a highly imbalanced class distribution, meaning some malware types are more prevalent than others.
         
@@ -221,6 +221,8 @@ By exploring the data, we can gain a better understanding of the dataset's chara
 \subsection{Model Training}
 The code utilizes a FineTuning class specifically designed for training CNN models for malware image classification using pre-trained architectures. Here's a breakdown of the model training process based on the code:
 
+
+
 \subsubsection{Pre-trained Model Selection}
 
     A pre-trained CNN model XceptionNet. These models are loaded using libraries like TensorFlow or Keras.
@@ -251,6 +253,14 @@ The code utilizes a FineTuning class specifically designed for training CNN mode
     The FineTuning class   facilitates training the model on the preprocessed training data generators. These generators efficiently load and feed batches of images to the model during training.
     Early stopping is implemented to prevent overfitting. This technique monitors the validation loss calculated on the validation data generator. If the validation loss doesn't improve for a certain number of epochs (iterations), training is terminated to avoid the model memorizing the training data instead of learning generalizable patterns.
 
+\begin{figure}[ht] % 'h' stands for 'here', it tries to place the figure here
+        \centering % Centers the figure horizontally
+        \includegraphics[width=0.5\textwidth]{training history.jpeg} % Replace 'example-image' with your image filename
+        \caption{Model Training Results} % Caption for the figure
+        \label{fig:example5} % Label to refer to the figure in the text
+      \end{figure}
+       
+      As shown in Fig 3 the accuracy of the model increases as we increase the number of epochs, giving 97.13\% accuracy at around epoch 10, loss decreases to about 2\% by epoch 10, area under curve reaches 99.98 by epoch 10, false positives decrease to about 170 out of total input size of 10,000 images, the precision increases to around 97\% by epoch 10 and recall increases to 98\% as well by epoch 10.
 \subsection{Model Evaluation}
 We utilize a ModelEvaluator class specifically designed to evaluate the performance of CNN models trained for malware image classification. Here's a breakdown of the model evaluation process based on the code:
 
@@ -297,20 +307,12 @@ We utilize a ModelEvaluator class specifically designed to evaluate the performa
 
 \begin{figure}[ht] % 'h' stands for 'here', it tries to place the figure here
   \centering % Centers the figure horizontally
-  \includegraphics[width=0.5\textwidth]{training history.jpeg} % Replace 'example-image' with your image filename
-  \caption{Model Training Results} % Caption for the figure
-  \label{fig:example5} % Label to refer to the figure in the text
-\end{figure}
-
-
-\begin{figure}[ht] % 'h' stands for 'here', it tries to place the figure here
-  \centering % Centers the figure horizontally
   \includegraphics[width=0.5\textwidth]{confusionmatrixf.jpeg} % Replace 'example-image' with your image filename
   \caption{Confusion Matrix} % Caption for the figure
   \label{fig:example6} % Label to refer to the figure in the text
 \end{figure}
 
-\subsection{Evaluation Metrics}
+\subsection{ Metrics}
 The performance of the model will be evaluated using the following metrics:
 
     Accuracy: The overall percentage of correctly classified malware samples.
