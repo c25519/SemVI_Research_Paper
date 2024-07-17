@@ -291,6 +291,17 @@ We utilize a ModelEvaluator class specifically designed to evaluate the performa
     
     The class  generates a classification report summarizing these metrics for each malware class the model predicts.
 
+    \begin{figure}[h] % 'h' stands for 'here', it tries to place the figure here
+        \centering % Centers the figure horizontally
+        \includegraphics[scale=0.4]{PredictionResults.jpeg} % Replace 'example-image' with your image filename
+        \caption{Prediction Results } % Caption for the figure
+        \label{fig:example7} % Label to refer to the figure in the text
+      \end{figure}
+
+
+      Figure 4 shows the results of the model's predictions across all the various classes of malware, and it also shows desirable results, as it correctly identifies 30 out of the 31 classes.
+
+
 \subsubsection{Confusion Matrix Generation}
 
     The ModelEvaluator class creates a confusion matrix to visualize the performance of the model for each class. The confusion matrix shows:
@@ -304,6 +315,9 @@ We utilize a ModelEvaluator class specifically designed to evaluate the performa
         
         True negatives: Non-malware samples correctly classified.
     By analyzing the confusion matrix, researchers can identify potential biases or weaknesses in the model's performance for specific malware classes.
+      \\
+      \\
+    Figure 5 page showcases the confusion matrix of the predictions, which show the number of false positives, true positives, false negatives and true negatives of the predictions across the 30 different classes of malware. We obtain desirable results, as the number of correct predictions, i.e. true positive and true negative across all the classes outnumber the false negatives and false positives.
 
 \begin{figure}[ht] % 'h' stands for 'here', it tries to place the figure here
   \centering % Centers the figure horizontally
@@ -326,12 +340,12 @@ The performance of the model will be evaluated using the following metrics:
 
 
 
-\begin{figure}[ht] % 'h' stands for 'here', it tries to place the figure here
-  \centering % Centers the figure horizontally
-  \includegraphics[width=0.5\textwidth]{PredictionResults.jpeg} % Replace 'example-image' with your image filename
-  \caption{Prediction Results } % Caption for the figure
-  \label{fig:example7} % Label to refer to the figure in the text
-\end{figure}
+% \begin{figure}[] % 'h' stands for 'here', it tries to place the figure here
+%   \centering % Centers the figure horizontally
+%   \includegraphics[scale=0.4]{PredictionResults.jpeg} % Replace 'example-image' with your image filename
+%   \caption{Prediction Results } % Caption for the figure
+%   \label{fig:example7} % Label to refer to the figure in the text
+% \end{figure}
 
 \setlength{\parskip}{10pt}
 
